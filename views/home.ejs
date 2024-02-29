@@ -4,6 +4,43 @@
     <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(23, 120, 120);
+        }
+        .td{
+            color: white;
+            font-size: 30px;
+        }
+        th{
+            font-size: 30px;
+        }
+        #shortener{
+            margin-left: 600px;
+            margin-top: 100px;
+        }
+        input{
+            border: none;
+            padding: 15px 40px;
+            background-color: rgb(8, 73, 73);
+            border-radius: 30px;
+        }
+        input[type="text"]{
+            color: white;
+            font-size: 20px;
+        }
+        .text{
+            color: white;
+            font-size: 30px;
+        }
+        button{
+            color: white;
+            background: none;
+            border: none;
+            font-size: 30px;
+            border: 4px solid black;
+            padding: 10px 10px;
+        }
+        #url_generate{
+            font-size: 30px;
         }
     </style>
     <meta charset="UTF-8">
@@ -11,18 +48,19 @@
     <title>Home Page</title>
 </head>
 <body>
+ 
+   <div id="shortener">
     <h1>URL Shortener</h1>
-   <div>
     <form method="post" action="/url">
-        <label>Enter Your Original URL</label>
+        <label class="text"><b>Enter Your Original URL: </b></label>
         <input type="text" name="url" placeholder="https://example.com"/>
         <button type="submit" >Generate</button>
         <% if (locals.id){ %>
-            <p>URL Generate: <a href="http://localhost:8000/url/<%= id %>">http://localhost:8000/url/<%= id %></a></p>
+            <p id="url_generate"><b>URL Generate: <a href="http://localhost:8000/url/<%= id %>">http://localhost:8000/url/<%= id %></a></b></p>
     
        <% } %>
     </form>
-   </div>
+  
    <div>
     <% if (locals.urls) { %>
      <table>
@@ -35,11 +73,11 @@
         </thead>
         <tbody>
             <% urls.forEach((url, index) => { %>
-                <tr>
-             <td><%= index + 1 %></td>
-             <td><%= url.shortId %></td>
-             <td><%= url.redirectURL %></td>
-             <td><%= url.visitHistory.length %></td>
+                <tr class="td">
+             <td><b><%= index + 1 %></b></td>
+             <td><b><%= url.shortId %></b></td>
+             <td><b><%= url.redirectURL %></b></td>
+             <td><b><%= url.visitHistory.length %></b></td>
              </tr>
 
             <% }) %>
@@ -47,5 +85,6 @@
      </table>
     <% } %>
    </div>
+</div>
 </body>
 </html>

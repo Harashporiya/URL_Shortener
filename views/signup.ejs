@@ -4,14 +4,46 @@
     <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(14, 95, 95);
         }
-        #text{
-            color:red;
-        }
+        
         #form{
             padding: 10px 10px;
             text-align: center;
             align-items: center;
+        }
+        input{
+            border: none;
+            padding: 15px 40px;
+            background-color: rgb(8, 73, 73);
+            border-radius: 30px;
+        }
+        form{
+            
+            border: 4px solid black;
+            width: 600px;
+            margin-left: 700px;
+            margin-top: 200px;
+        }
+        .text{
+            color: white;
+            font-size: 30px;
+            
+        }
+        #h1{
+            color: white;
+        }
+        input[type="text"]{
+            color: white;
+            font-size: 20px;
+        }
+        button{
+            color: white;
+            background: none;
+            border: none;
+            font-size: 30px;
+            border: 4px solid black;
+            padding: 10px 10px;
         }
     </style>
     <meta charset="UTF-8">
@@ -23,20 +55,20 @@
 <body>
   
     <form id="form" method="post" action="/user">
-        <h1>Signup</h1>
-        <label>Full Name:</label>
-        <input type="text" required name="name"/>
+        <h1 id="h1">Signup</h1>
+        <label class="text"><b>Full Name:</b></label>
+        <input type="text"  required name="name"/>
            <br/>
            <br/>
-        <label id="text">Email:</label>
+        <label class="text" id="text"><b>Email:</b></label>
         <input type="text" required name="email"/>
         <br/>
         <br/>
-        <label>Password:</label>
+        <label class="text"><b>Password:</b></label>
         <input type="text" required name="password"/>
         <br/>
         <br/>
-        <button type="submit" className="text-red-500">Signup</button>
+        <button type="submit" id="button"><b>Signup</b></button>
     </form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const {getUser} = require("../URL_Shortener/services/auth")
+const {getUser} = require("../services/auth")
 async function restrictToLoggedinUserOnly(req,res,next){
     const userUid = req.cookies?.uid;
 
